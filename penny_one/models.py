@@ -33,7 +33,7 @@ class recovery_codes(models.Model):
 class ewallet_transaction(models.Model):
     transactionID = models.IntegerField(max_length=11)
     amount = models.DecimalField(max_digits=10, decimal_places=2)
-    transactionType = models.IntegerField(max_digits=1)
+    transactionType = models.IntegerField(max_length=1)
     date = models.DateField(auto_now_add=True)
 
 #POINTS
