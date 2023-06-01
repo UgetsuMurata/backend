@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from penny_one.views import userViews
+from penny_one.views import userViews, orderViews
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
 urlpatterns = [
@@ -25,4 +25,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/user', userViews.user, name="user"),
     path('api/user/<int:userid>', userViews.user, name="user"),
+    path('api/products/drinks/', orderViews.productView, name="product")
+    
 ]
