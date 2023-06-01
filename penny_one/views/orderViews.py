@@ -13,9 +13,9 @@ def orderItemsView(request):
     serializer = OrderItemsSerializer(data, many=True)
     return JsonResponse({'orders_items': serializer.data})
 
-def productView(request):
-    data = products.objects.all()
-    serializer = ProductsSerializer(data, many=True)
-    data2 = food.objects.all()
-    serializer2 = FoodSerializer(data, many=True)
+def drinkCategoryView(request):
+    data = products.objects.filter(productName='Coffee').union(products.objects.filter(productName='Non Coffee'))
+    serializer = DrinkSerializer(data, many=True)
+    drink.objects.select_related("prodfk")
     return JsonResponse({'products': serializer.data})
+
