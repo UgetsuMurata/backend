@@ -5,9 +5,9 @@ class user(models.Model):
     username = models.CharField(max_length=10)
     password = models.CharField(max_length=50)
     phoneNum = models.CharField(max_length=11)
-    
+
 class userHasInfo(models.Model):
-    userID = models.IntegerField( primary_key=True)
+    userID = models.IntegerField(primary_key=True)
     email = models.CharField(max_length=200)
     fullname = models.IntegerField()
     fullAddress = models.IntegerField()
